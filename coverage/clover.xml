@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1569076252989" clover="3.2.0">
+  <project timestamp="1569076252990" name="All files">
+    <metrics statements="17" coveredstatements="16" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="5" elements="25" coveredelements="23" complexity="0" loc="17" ncloc="17" packages="3" files="4" classes="4"/>
+    <package name="components">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="form.tsx" path="/Users/yuzuriha/code/TodoApp/src/components/form.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="screen">
+      <metrics statements="11" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <file name="Home.tsx" path="/Users/yuzuriha/code/TodoApp/src/screen/Home.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+      <file name="Login.tsx" path="/Users/yuzuriha/code/TodoApp/src/screen/Login.tsx">
+        <metrics statements="10" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="39" count="4" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="util">
+      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="string_util.tsx" path="/Users/yuzuriha/code/TodoApp/src/util/string_util.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="10" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+  </project>
+</coverage>

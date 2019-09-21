@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Form renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <Text>
+    Email:
+  </Text>
+  <View>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "black",
+          "borderWidth": 1,
+          "height": 37,
+          "width": 250,
+        }
+      }
+      testID="email"
+      underlineColorAndroid="transparent"
+    />
+    <Text>
+      Required
+    </Text>
+  </View>
+  <View>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "black",
+          "borderWidth": 1,
+          "height": 37,
+          "width": 250,
+        }
+      }
+      testID="password"
+      underlineColorAndroid="transparent"
+    />
+    <Text>
+      Required
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Text>
+      Submit
+    </Text>
+  </View>
+</RCTSafeAreaView>
+`;
