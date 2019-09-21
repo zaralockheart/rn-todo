@@ -1,11 +1,10 @@
 import React from 'react'
 import {ErrorOther, Field, InjectedFormProps, reduxForm} from 'redux-form'
 import {SafeAreaView, Text, TouchableOpacity} from "react-native"
-import TextInput from '../components/form'
-import {isNotEmpty} from "../util/string_util"
-import {useNavigation} from "react-navigation-hooks"
 
-// import {useNavigation} from 'react-navigation-hooks'
+import {Input} from '../components/form'
+import {isNotEmpty} from "../util/string_util"
+import {useNavigation} from "../config/navigation"
 
 interface LoginProps {
 	email: string
@@ -24,8 +23,8 @@ const LoginForm = (props: InjectedFormProps<LoginProps>) => {
 	return (
 		<SafeAreaView>
 			<Text>Email:</Text>
-			<Field name="email" component={TextInput}/>
-			<Field name="password" component={TextInput}/>
+			<Field name="email" component={Input}/>
+			<Field name="password" component={Input}/>
 			<TouchableOpacity onPress={handleSubmit(validateLogin)}>
 				<Text>Submit</Text>
 			</TouchableOpacity>
