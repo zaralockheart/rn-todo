@@ -12,6 +12,7 @@
     "@types/react-redux": "^7.1.2",
     "@types/redux-form": "^8.1.5",
     "@types/redux-logger": "^3.0.7",
+    "@types/uuid": "^3.4.5",
     "lodash": "^4.17.15",
     "react": "^16.9.0",
     "react-native": "0.60.5",
@@ -26,10 +27,12 @@
     "redux-form": "^8.2.6",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@babel/runtime": "^7.5.0",
     "@react-native-community/eslint-config": "^0.0.3",
     "@types/enzyme": "^3.10.3",
@@ -52,6 +55,7 @@
     "react-dom": "^16.9.0",
     "react-native-typescript-transformer": "^1.2.13",
     "react-test-renderer": "16.8.6",
+    "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.3",
     "typescript": "^3.6.3"
   },
@@ -61,7 +65,7 @@
       "./__tests__/setup.ts"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|sentry-expo|native-base))"
+      "node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|sentry-expo|native-base|@react-native-community/async-storage))"
     ],
     "moduleFileExtensions": [
       "ts",

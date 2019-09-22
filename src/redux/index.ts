@@ -1,4 +1,2 @@
-interface Action<PROPS> {
-	type: string
-	payload: PROPS
-}
+export * from './main'
+export * from './todo'

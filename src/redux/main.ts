@@ -1,16 +1,27 @@
 // Imports: Dependencies
-import {applyMiddleware, combineReducers, createStore} from 'redux'
+import {applyMiddleware, combineReducers, createStore, Store} from 'redux'
 import thunk from 'redux-thunk'
 import AsyncStorage from '@react-native-community/async-storage'
 import {createLogger} from 'redux-logger'
 import {persistReducer, persistStore} from 'redux-persist'
-import {reducer as formReducer} from 'redux-form'
+import {FormStateMap, reducer as formReducer} from 'redux-form'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-// Imports: Reducers
+import {todo, todoState} from "./todo"
 
+interface Actions<PROPS> {
+	type: string
+	payload: PROPS
+}
+
+interface ReducersAugment {
+	form: FormStateMap
+	todo: todoState
+}
 // Redux: Root Reducer
 const rootReducer = combineReducers({
-	form: formReducer
+	form: formReducer,
+	todo
 });
 
 
@@ -30,7 +41,7 @@ const persistConfig = {
 	storage: AsyncStorage,
 	// Whitelist (Save Specific Reducers)
 	whitelist: [
-		'authReducer',
+		'todo',
 	],
 	// Blacklist (Don't Save Specific Reducers)
 	blacklist: [],
@@ -40,9 +51,11 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 // Redux: Store
-const store = createStore(
+export type State = ReducersAugment
+
+const store: Store<State> = createStore(
 	persistedReducer,
-	applyMiddleware(...middleware),
+	composeWithDevTools(applyMiddleware(...middleware)),
 );
 
 // Middleware: Redux Persist Persister
@@ -52,4 +65,5 @@ let persistor = persistStore(store);
 export {
 	store,
 	persistor,
+	Actions
 };

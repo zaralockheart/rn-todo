@@ -1,1 +1,2 @@
-export const isNotEmpty = (input: String): string | undefined => !input ? 'Required' : undefined
+export const isNotEmpty = (input: String, message: string = 'Required'): string | undefined =>
+	!input ? message : undefined

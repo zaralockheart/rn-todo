@@ -12,7 +12,7 @@ import React from 'react';
 import {PersistGate} from 'redux-persist/es/integration/react'
 import {Provider} from 'react-redux';
 
-import {persistor, store} from './src/config/redux';
+import {persistor, store} from './src/redux';
 import Navigation from './src/config/navigation'
 import {StatusBar} from "react-native"
 

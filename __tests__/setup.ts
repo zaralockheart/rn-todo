@@ -16,6 +16,8 @@ jest.mock('react-navigation-hooks', () => ({
 	})
 }))
 
+jest.mock('@react-native-community/async-storage')
+
 const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
 const {window} = jsdom;
 

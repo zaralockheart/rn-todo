@@ -5,8 +5,8 @@ import Login from "../screen/Login"
 import AddTodo from "../screen/AddTodo"
 
 const AppNavigator = createStackNavigator({
-	Login,
 	Home,
+	Login,
 	AddTodo,
 }, {
 	defaultNavigationOptions: {

@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {StyleSheet, Text, TextInput, TextInputProps, TouchableOpacity, View} from "react-native"
 import {WrappedFieldProps} from "redux-form"
 
@@ -8,11 +8,16 @@ interface InputProps extends WrappedFieldProps {
 
 const Input = (props: InputProps) => {
 	const {input, meta, ...otherProps} = props
-	const {onChange} = input
+	const {onChange, value} = input
 	const {error} = meta
 	return (
 		<View>
-			<TextInput testID={input.name} style={styles.input} onChangeText={onChange} {...otherProps} />
+			<TextInput
+				value={value}
+				testID={input.name}
+				style={styles.input}
+				onChangeText={onChange}
+				{...otherProps} />
 			<Text>{error}</Text>
 		</View>
 	)
@@ -31,26 +36,32 @@ const ListSelector = (props: ListSelectorProps) => {
 	const {input, items} = props
 	const {onChange, value} = input
 
-	const [selected, setSelected] = useState(new Map<number, String>());
+	const [selected, setSelected] = useState({} as { [key: number]: string });
+
+	useEffect(() => {
+
+		setSelected(value)
+		onChange(value)
+	}, [])
 
 	return (
 		<View style={styles.listParent}>
 			{items.map((item, index) => (
 				<TouchableOpacity
-					style={[styles.myButton, selected.has(item.id) && styles.buttonSelected]}
+					style={[styles.myButton, !!selected[item.id] && styles.buttonSelected]}
 					key={index}
 					onPress={() => {
+						let filterMap = {
+							...selected
+						}
 
-						let filterMap = new Map(selected)
-
-						if (filterMap.has(item.id)) {
-							filterMap.delete(item.id)
+						if (!!filterMap[item.id]) {
+							delete filterMap[item.id]
 						} else {
-							filterMap.set(item.id, item.text)
+							filterMap[item.id] = item.text
 						}
 
 						setSelected(filterMap)
-
 						onChange(filterMap)
 					}}>
 					<Text>{item.text}</Text>

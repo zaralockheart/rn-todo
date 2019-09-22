@@ -1,19 +1,34 @@
 import {Dispatch} from "redux"
+import uuidv5 from 'uuid/v5'
+
+import {Actions} from "./main"
 
 // Action Names
 const ADD_TODO = 'ADD_TODO'
 const REMOVE_TODO = 'REMOVE_TODO'
+const EDIT_TODO = 'EDIT_TODO'
 
 // Actions
 interface AddTodoProps {
 	title: string
-	subtitle?: string
-	days: Map<number, String>
+	subtitle?: string | undefined
+	days: { [key: number]: string }
 }
 
-export const addTodo = (data: AddTodoProps) => (dispatch: Dispatch) => {
+const addTodo = (data: AddTodoProps) => (dispatch: Dispatch) => {
 	dispatch({
 		type: ADD_TODO,
+		payload: data
+	})
+}
+
+interface EditTodoProps extends AddTodoProps {
+	id: string
+}
+
+const editTodo = (data: EditTodoProps) => (dispatch: Dispatch) => {
+	dispatch({
+		type: EDIT_TODO,
 		payload: data
 	})
 }
@@ -22,7 +37,7 @@ interface RemoveTodoProps {
 	id: string
 }
 
-export const removeTodo = (data: RemoveTodoProps) => (dispatch: Dispatch) => {
+const removeTodo = (data: RemoveTodoProps) => (dispatch: Dispatch) => {
 	dispatch({
 		type: REMOVE_TODO,
 		payload: data
@@ -36,8 +51,8 @@ type TodoProps = AddTodoProps & RemoveTodoProps
 interface TodoObject {
 	id: string
 	title: string
-	subtitle: string
-	days: Map<number, String>
+	subtitle: string | undefined
+	days: { [key: number]: string }
 }
 
 const initialState = {
@@ -45,12 +60,76 @@ const initialState = {
 	ids: [] as string[]
 }
 
-export type TodoState = typeof initialState
+type todoState = typeof initialState
 
-export const signInDetailsReducer = (state = initialState, action: Action<TodoProps>) => {
+const todo = (state = initialState, action: Actions<TodoProps>) => {
 	switch (action.type) {
-		case ADD_TODO:
-			break;
+		case ADD_TODO: {
+			const newId = !!state.ids ? state.ids.slice() : []
+			let createdId = uuidv5(Date.now().toLocaleString(), uuidv5.DNS)
+			newId.push(createdId)
+			const newTodo: { [key: string]: TodoObject } = {
+				...state.todo
+			}
+
+			newTodo[createdId] = {
+				id: createdId,
+				subtitle: action.payload.subtitle,
+				title: action.payload.title,
+				days: action.payload.days,
+			}
+
+			const newState: todoState = {
+				ids: newId,
+				todo: newTodo,
+			}
+			return newState
+		}
+		case REMOVE_TODO: {
+			const newIds = state.ids.slice().filter(i => i !== action.payload.id);
+
+			const newTodo = {
+				...state.todo
+			}
+
+			delete newTodo[action.payload.id];
+			const newState: todoState = {
+				ids: newIds,
+				todo: newTodo,
+			}
+			return newState
+		}
+		case EDIT_TODO: {
+			const newTodo = {
+				...state.todo
+			}
+
+			newTodo[action.payload.id] = {
+				id: action.payload.id,
+				title: action.payload.title,
+				subtitle: action.payload.subtitle,
+				days: action.payload.days,
+			}
+
+			const newState: todoState = {
+				ids: state.ids,
+				todo: newTodo,
+			}
+
+			console.log(newState)
+
+			return newState
+		}
 		default:
+			return state
 	}
+}
+
+export {
+	TodoObject,
+	todoState,
+	todo,
+	addTodo,
+	removeTodo,
+	editTodo
 }
