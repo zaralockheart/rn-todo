@@ -3,7 +3,6 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Home from "../screen/Home"
 import Login from "../screen/Login"
 import AddTodo from "../screen/AddTodo"
-import {useContext} from "react"
 
 const AppNavigator = createStackNavigator({
 	Login,
@@ -16,8 +15,3 @@ const AppNavigator = createStackNavigator({
 });
 
 export default createAppContainer(AppNavigator);
-
-export function useNavigation<Params>() {
-	return useContext(NavigationContext) as NavigationScreenProp<NavigationRoute,
-		Params>;
-}

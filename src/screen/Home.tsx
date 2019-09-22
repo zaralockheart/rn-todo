@@ -1,6 +1,6 @@
 import React from "react"
 import {SafeAreaView, StyleSheet, TouchableOpacity, View, Text} from "react-native"
-import {useNavigation} from "../config/navigation"
+import {useNavigation} from "react-navigation-hooks"
 
 export default () => {
 

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import {StyleSheet, Text, TextInput, TextInputProps, TouchableOpacity, View} from "react-native"
 import {WrappedFieldProps} from "redux-form"
 

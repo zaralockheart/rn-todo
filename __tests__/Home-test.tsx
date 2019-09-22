@@ -9,7 +9,6 @@ import renderer from 'react-test-renderer';
 import {combineReducers, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {reducer as formReducer} from 'redux-form';
-import {TouchableOpacity} from "react-native"
 
 import Home from "../src/screen/Home"
 

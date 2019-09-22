@@ -1,10 +1,10 @@
 import React from "react"
 import {SafeAreaView, Text, TouchableOpacity} from "react-native"
 import {ErrorOther, Field, InjectedFormProps, reduxForm} from "redux-form"
+import _ from "lodash"
+import {useNavigation} from "react-navigation-hooks"
 
 import {Input, ListSelector} from '../components/form'
-import {useNavigation} from "../config/navigation"
-import _ from "lodash"
 
 const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
 
@@ -51,7 +51,7 @@ const AddTodo = (props: InjectedFormProps<TodoFormProps>) => {
 
 export default reduxForm<TodoFormProps>({
 	form: 'TODO_FORM',
-	validate(values: TodoFormProps, props: {} & InjectedFormProps<TodoFormProps, {}, string>): { [P in keyof TodoFormProps]?: React.ReactElement | string } & ErrorOther<string> {
+	validate(values: TodoFormProps): { [P in keyof TodoFormProps]?: React.ReactElement | string } & ErrorOther<string> {
 		const errors: Partial<{ [x in keyof TodoFormProps]: string }> = {
 			title: undefined,
 			days: undefined

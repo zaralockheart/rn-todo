@@ -2,14 +2,22 @@ import 'react-native';
 import 'jest-enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
+import {useNavigation} from "react-navigation-hooks"
 
 /**
  * Set up DOM in node.js environment for Enzyme to mount to
  */
-const { JSDOM } = require('jsdom');
+const {JSDOM} = require('jsdom');
+
+jest.mock('react-navigation-hooks', () => ({
+	useNavigation: () => ({
+		goBack: jest.fn(),
+		navigate: jest.fn((parms: string) => 'hey')
+	})
+}))
 
 const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
-const { window } = jsdom;
+const {window} = jsdom;
 
 function copyProps(src: any, target: any) {
 	Object.defineProperties(target, {
@@ -39,4 +47,4 @@ console.error = (message: any) => {
  * Set up Enzyme to mount to DOM, simulate events,
  * and inspect the DOM in tests.
  */
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({adapter: new Adapter()});

@@ -5,13 +5,12 @@
 
 import React from 'react'
 import 'react-native'
-import TestRenderer from 'react-test-renderer';
-// Note: test renderer must be required after react-native.
+import { mount } from 'enzyme'
 import {combineReducers, createStore} from 'redux'
 import {Provider} from 'react-redux'
 import {Field, reducer as formReducer} from 'redux-form'
 
-import Login from "../src/screen/Login"
+import AddTodo from "../src/screen/AddTodo"
 
 const rootReducer = combineReducers({
 	form: formReducer,
@@ -19,18 +18,15 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer)
 
-describe('Login Form', () => {
+describe('Add Todo Form', () => {
 
 	it('renders correctly', () => {
-		const component = TestRenderer.create(
+
+		const component = mount(
 			<Provider store={store}>
-				<Login/>
+				<AddTodo/>
 			</Provider>
 		)
-
-		expect(component).toMatchSnapshot()
-
-		expect(component.root.findAllByType(Field)).toHaveLength(2)
 
 	})
 })

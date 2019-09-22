@@ -1,10 +1,10 @@
 import React from 'react'
 import {ErrorOther, Field, InjectedFormProps, reduxForm} from 'redux-form'
 import {SafeAreaView, Text, TouchableOpacity} from "react-native"
+import {useNavigation} from "react-navigation-hooks"
 
 import {Input} from '../components/form'
 import {isNotEmpty} from "../util/string_util"
-import {useNavigation} from "../config/navigation"
 
 interface LoginProps {
 	email: string
