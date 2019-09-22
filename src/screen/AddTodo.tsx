@@ -7,7 +7,7 @@ import {useNavigation, useNavigationParam} from "react-navigation-hooks"
 import {Input, ListSelector} from '../components/form'
 import {useDispatch} from "react-redux"
 import {addTodo, editTodo} from "../redux"
-import {isNotEmpty} from "../util/string_util"
+import {isNotEmpty} from "../util/main"
 
 export const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
 

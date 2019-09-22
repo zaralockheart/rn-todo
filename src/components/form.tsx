@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import {StyleSheet, Text, TextInput, TextInputProps, TouchableOpacity, View} from "react-native"
 import {WrappedFieldProps} from "redux-form"
+import {returnFilter} from "../util/main"
 
 interface InputProps extends WrappedFieldProps {
 	otherProps: TextInputProps
@@ -51,15 +52,11 @@ const ListSelector = (props: ListSelectorProps) => {
 					style={[styles.myButton, !!selected[item.id] && styles.buttonSelected]}
 					key={index}
 					onPress={() => {
-						let filterMap = {
-							...selected
-						}
-
-						if (!!filterMap[item.id]) {
-							delete filterMap[item.id]
-						} else {
-							filterMap[item.id] = item.text
-						}
+						let filterMap = returnFilter(
+							selected,
+							item.id,
+							item.text
+						)
 
 						setSelected(filterMap)
 						onChange(filterMap)

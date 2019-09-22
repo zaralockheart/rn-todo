@@ -4,7 +4,7 @@ import {SafeAreaView, Text, TouchableOpacity} from "react-native"
 import {useNavigation} from "react-navigation-hooks"
 
 import {Input} from '../components/form'
-import {isNotEmpty} from "../util/string_util"
+import {isNotEmpty} from "../util/main"
 
 interface LoginProps {
 	email: string
