@@ -116,8 +116,6 @@ const todo = (state = initialState, action: Actions<TodoProps>) => {
         todo: newTodo
       }
 
-      console.log(newState)
-
       return newState
     }
     default:

@@ -19,6 +19,10 @@ jest.mock('react-navigation-hooks', () => ({
 }))
 jest.mock('@react-native-community/async-storage')
 
+jest.mock('NativeAnimatedHelper');
+
+jest.mock('react-native-scrollable-tab-view', () => 'NativeAnimatedHelper');
+
 const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
 const {window} = jsdom;
 
