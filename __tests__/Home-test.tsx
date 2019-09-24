@@ -5,7 +5,7 @@
 import 'react-native'
 import React from 'react'
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer'
+import renderer from "react-test-renderer"
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
