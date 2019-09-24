@@ -2,20 +2,21 @@ import 'react-native';
 import 'jest-enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
-import {useNavigation} from "react-navigation-hooks"
 
 /**
  * Set up DOM in node.js environment for Enzyme to mount to
  */
 const {JSDOM} = require('jsdom');
 
+export const isTest = true;
+
 jest.mock('react-navigation-hooks', () => ({
 	useNavigation: () => ({
 		goBack: jest.fn(),
 		navigate: jest.fn((parms: string) => 'hey')
-	})
+	}),
+	useNavigationParam: jest.fn()
 }))
-
 jest.mock('@react-native-community/async-storage')
 
 const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
