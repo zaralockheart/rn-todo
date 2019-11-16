@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "ios": "react-native run-ios",
-    "test": "jest __tests__/*-test.tsx --coverage"
+    "test": "jest __tests__/ --coverage"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
@@ -64,6 +64,9 @@
   "jest": {
     "preset": "react-native",
     "setupFilesAfterEnv": [
+      "./__tests__/setup.ts"
+    ],
+    "testPathIgnorePatterns" : [
       "./__tests__/setup.ts"
     ],
     "transformIgnorePatterns": [

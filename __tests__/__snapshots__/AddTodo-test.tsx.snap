@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Todo Form renders correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <View>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="What is is about?"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "black",
+          "borderWidth": 1,
+          "height": 37,
+          "width": 250,
+        }
+      }
+      testID="title"
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text>
+      Title is required
+    </Text>
+  </View>
+  <View>
+    <TextInput
+      allowFontScaling={true}
+      onChangeText={[Function]}
+      placeholder="Any more details?"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "black",
+          "borderWidth": 1,
+          "height": 37,
+          "width": 250,
+        }
+      }
+      testID="subtitle"
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <Text />
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 100,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": 50,
+        }
+      }
+    >
+      <Text>
+        MON
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 100,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": 50,
+        }
+      }
+    >
+      <Text>
+        TUE
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 100,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": 50,
+        }
+      }
+    >
+      <Text>
+        WED
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 100,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": 50,
+        }
+      }
+    >
+      <Text>
+        THU
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 100,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": 50,
+        }
+      }
+    >
+      <Text>
+        FRI
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 100,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": 50,
+        }
+      }
+    >
+      <Text>
+        SAT
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderRadius": 100,
+          "height": 50,
+          "justifyContent": "center",
+          "opacity": 1,
+          "padding": 5,
+          "width": 50,
+        }
+      }
+    >
+      <Text>
+        SUN
+      </Text>
+    </View>
+  </View>
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <Text>
+      Save
+    </Text>
+  </View>
+</RCTSafeAreaView>
+`;

@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Todo Form renders correctly 1`] = `
+<View
+  accessible={true}
+  clickable={true}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+      "padding": 10,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text>
+      title
+    </Text>
+    <View
+      accessible={true}
+      clickable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "red",
+          "height": 20,
+          "opacity": 1,
+          "width": 20,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 100,
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 5,
+            "width": 50,
+          },
+          false,
+        ]
+      }
+    >
+      <Text>
+        MON
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 100,
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 5,
+            "width": 50,
+          },
+          Object {
+            "backgroundColor": "blue",
+          },
+        ]
+      }
+    >
+      <Text>
+        TUE
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 100,
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 5,
+            "width": 50,
+          },
+          false,
+        ]
+      }
+    >
+      <Text>
+        WED
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 100,
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 5,
+            "width": 50,
+          },
+          false,
+        ]
+      }
+    >
+      <Text>
+        THU
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 100,
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 5,
+            "width": 50,
+          },
+          false,
+        ]
+      }
+    >
+      <Text>
+        FRI
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 100,
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 5,
+            "width": 50,
+          },
+          false,
+        ]
+      }
+    >
+      <Text>
+        SAT
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 100,
+            "height": 50,
+            "justifyContent": "center",
+            "padding": 5,
+            "width": 50,
+          },
+          false,
+        ]
+      }
+    >
+      <Text>
+        SUN
+      </Text>
+    </View>
+  </View>
+</View>
+`;
