@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "ios": "react-native run-ios",
+    "android": "react-native run-android",
     "test": "jest __tests__/ --coverage"
   },
   "dependencies": {
@@ -14,8 +15,8 @@
     "@types/redux-logger": "^3.0.7",
     "@types/uuid": "^3.4.5",
     "lodash": "^4.17.15",
-    "react": "^16.9.0",
-    "react-native": "0.60.5",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
     "react-native-gesture-handler": "^1.4.1",
     "react-native-reanimated": "^1.2.0",
     "react-native-screens": "^1.0.0-alpha.23",
@@ -66,7 +67,7 @@
     "setupFilesAfterEnv": [
       "./__tests__/setup.ts"
     ],
-    "testPathIgnorePatterns" : [
+    "testPathIgnorePatterns": [
       "./__tests__/setup.ts"
     ],
     "transformIgnorePatterns": [
