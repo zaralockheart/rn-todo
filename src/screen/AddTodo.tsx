@@ -1,5 +1,5 @@
 import React from 'react'
-import {SafeAreaView, Text, TouchableOpacity} from 'react-native'
+import {SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
 import {ErrorOther, Field, InjectedFormProps, reduxForm} from 'redux-form'
 import _ from 'lodash'
 import {useNavigation, useNavigationParam} from 'react-navigation-hooks'
@@ -14,7 +14,7 @@ export const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
 interface TodoFormProps {
   title: string
   subtitle: string
-  days: {[key: number]: string}
+  days: { [key: number]: string }
 }
 
 const AddTodo = (props: InjectedFormProps<TodoFormProps>) => {
@@ -48,26 +48,32 @@ const AddTodo = (props: InjectedFormProps<TodoFormProps>) => {
   }
 
   return (
-    <SafeAreaView>
-      <Field name="title" component={Input} placeholder={'What is is about?'} />
-      <Field
-        name="subtitle"
-        component={Input}
-        placeholder={'Any more details?'}
-      />
-      <Field
-        name="days"
-        component={ListSelector}
-        items={days.map((day, index) => ({
-          id: index,
-          text: day
-        }))}
-      />
-      <TouchableOpacity
-        disabled={props.invalid}
-        onPress={props.handleSubmit(save)}>
-        <Text>Save</Text>
-      </TouchableOpacity>
+    <SafeAreaView style={{flex: 1}}>
+      <View style={styles.parent}>
+        <Text>Title</Text>
+        <Field name="title" component={Input} placeholder={'What is is about?'}/>
+        <Text>Subtitle</Text>
+        <Field
+          name="subtitle"
+          component={Input}
+          placeholder={'Any more details?'}
+        />
+        <Field
+          name="days"
+          component={ListSelector}
+          items={days.map((day, index) => ({
+            id: index,
+            text: day
+          }))}
+        />
+        <View style={{flex: 1}}/>
+        <TouchableOpacity
+          style={styles.save}
+          disabled={props.invalid}
+          onPress={props.handleSubmit(save)}>
+          <Text>Save</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   )
 }
@@ -77,9 +83,9 @@ const AddTodoForm = reduxForm<TodoFormProps>({
   enableReinitialize: true,
   validate(
     values: TodoFormProps
-  ): {[P in keyof TodoFormProps]?: React.ReactElement | string} &
+  ): { [P in keyof TodoFormProps]?: React.ReactElement | string } &
     ErrorOther<string> {
-    const errors: Partial<{[x in keyof TodoFormProps]: string}> = {
+    const errors: Partial<{ [x in keyof TodoFormProps]: string }> = {
       title: undefined,
       days: undefined
     }
@@ -108,3 +114,16 @@ export default () => {
     />
   )
 }
+
+const styles = StyleSheet.create({
+  parent: {
+    flex: 1,
+    padding: 10,
+  },
+  save: {
+    backgroundColor: 'brown',
+    padding: 20,
+    alignItems: 'center',
+    borderRadius: 10,
+  }
+})

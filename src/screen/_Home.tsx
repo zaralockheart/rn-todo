@@ -15,13 +15,18 @@ export const TodoCard = (args: TodoObject & TodoCardProps) => {
       style={styles.parent}
       onPress={() => args.onPressEdit(args.id)}>
       <View style={styles.row}>
-        <Text>{args.title}</Text>
+        <View>
+          <Text>Title</Text>
+          <Text>{args.title}</Text>
+        </View>
         <TouchableOpacity
           style={styles.removeButton}
           onPress={() => args.onPressRemove(args.id)}
-        />
+        >
+          <Text>Delete</Text>
+        </TouchableOpacity>
       </View>
-      <View style={[styles.row]}>
+      <View style={[styles.row, {backgroundColor: 'white'}]}>
         {days.map((day, index) => (
           <View
             key={index}
@@ -36,25 +41,28 @@ export const TodoCard = (args: TodoObject & TodoCardProps) => {
 
 const styles = StyleSheet.create({
   parent: {
-    padding: 10
+    margin: 10,
+    backgroundColor: 'yellow',
+    elevation: 10,
+    borderRadius: 10,
   },
   row: {
+    borderBottomEndRadius: 10,
+    borderBottomStartRadius: 10,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    padding: 20,
   },
   removeButton: {
     height: 20,
-    width: 20,
-    backgroundColor: 'red'
   },
   buttonSelected: {
     backgroundColor: 'blue'
   },
   round: {
-    padding: 5,
-    height: 50,
-    width: 50,
-    borderRadius: 100,
+    height: 40,
+    width: 40,
+    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center'
   }
