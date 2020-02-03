@@ -1,5 +1,11 @@
 import React from 'react'
-import {SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import {ErrorOther, Field, InjectedFormProps, reduxForm} from 'redux-form'
 import _ from 'lodash'
 import {useNavigation, useNavigationParam} from 'react-navigation-hooks'
@@ -14,7 +20,7 @@ export const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
 interface TodoFormProps {
   title: string
   subtitle: string
-  days: { [key: number]: string }
+  days: {[key: number]: string}
 }
 
 const AddTodo = (props: InjectedFormProps<TodoFormProps>) => {
@@ -31,16 +37,16 @@ const AddTodo = (props: InjectedFormProps<TodoFormProps>) => {
           id,
           days: obj.days,
           title: obj.title,
-          subtitle: obj.subtitle
-        })
+          subtitle: obj.subtitle,
+        }),
       )
     } else {
       dispatch(
         addTodo({
           days: obj.days,
           title: obj.title,
-          subtitle: obj.subtitle
-        })
+          subtitle: obj.subtitle,
+        }),
       )
     }
 
@@ -51,7 +57,11 @@ const AddTodo = (props: InjectedFormProps<TodoFormProps>) => {
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.parent}>
         <Text>Title</Text>
-        <Field name="title" component={Input} placeholder={'What is is about?'}/>
+        <Field
+          name="title"
+          component={Input}
+          placeholder={'What is is about?'}
+        />
         <Text>Subtitle</Text>
         <Field
           name="subtitle"
@@ -63,10 +73,10 @@ const AddTodo = (props: InjectedFormProps<TodoFormProps>) => {
           component={ListSelector}
           items={days.map((day, index) => ({
             id: index,
-            text: day
+            text: day,
           }))}
         />
-        <View style={{flex: 1}}/>
+        <View style={{flex: 1}} />
         <TouchableOpacity
           style={styles.save}
           disabled={props.invalid}
@@ -82,12 +92,12 @@ const AddTodoForm = reduxForm<TodoFormProps>({
   form: 'TODO_FORM',
   enableReinitialize: true,
   validate(
-    values: TodoFormProps
-  ): { [P in keyof TodoFormProps]?: React.ReactElement | string } &
+    values: TodoFormProps,
+  ): {[P in keyof TodoFormProps]?: React.ReactElement | string} &
     ErrorOther<string> {
-    const errors: Partial<{ [x in keyof TodoFormProps]: string }> = {
+    const errors: Partial<{[x in keyof TodoFormProps]: string}> = {
       title: undefined,
-      days: undefined
+      days: undefined,
     }
 
     errors.title = isNotEmpty(values.title, 'Title is required')
@@ -96,7 +106,7 @@ const AddTodoForm = reduxForm<TodoFormProps>({
       : undefined
 
     return errors
-  }
+  },
 })(AddTodo)
 
 export default () => {
@@ -109,7 +119,7 @@ export default () => {
       initialValues={{
         title,
         subtitle,
-        days
+        days,
       }}
     />
   )
@@ -125,5 +135,5 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
     borderRadius: 10,
-  }
+  },
 })

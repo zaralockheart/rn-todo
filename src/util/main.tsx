@@ -1,15 +1,15 @@
 export const isNotEmpty = (
   input: String,
-  message: string = 'Required'
+  message: string = 'Required',
 ): string | undefined => (!input ? message : undefined)
 
 export const returnFilter = (
   oldMap: {[key: number]: string},
   selectedIdentifier: number,
-  selectedValue: string
+  selectedValue: string,
 ): {[key: number]: string} => {
   let filterMap = {
-    ...oldMap
+    ...oldMap,
   }
 
   if (!!filterMap[selectedIdentifier]) {

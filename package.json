@@ -82,6 +82,11 @@
       "node"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx, scss}": [
       "prettier --no-semi --single-quote --write",

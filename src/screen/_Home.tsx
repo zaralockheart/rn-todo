@@ -21,8 +21,7 @@ export const TodoCard = (args: TodoObject & TodoCardProps) => {
         </View>
         <TouchableOpacity
           style={styles.removeButton}
-          onPress={() => args.onPressRemove(args.id)}
-        >
+          onPress={() => args.onPressRemove(args.id)}>
           <Text>Delete</Text>
         </TouchableOpacity>
       </View>
@@ -57,13 +56,13 @@ const styles = StyleSheet.create({
     height: 20,
   },
   buttonSelected: {
-    backgroundColor: 'blue'
+    backgroundColor: 'blue',
   },
   round: {
     height: 40,
     width: 40,
     borderRadius: 20,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 })

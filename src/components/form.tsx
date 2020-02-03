@@ -5,22 +5,21 @@ import {
   TextInput,
   TextInputProps,
   TouchableOpacity,
-  View
+  View,
 } from 'react-native'
 import {WrappedFieldProps} from 'redux-form'
 import {returnFilter} from '../util/main'
 
 interface InputProps extends WrappedFieldProps {
-  otherProps: TextInputProps,
+  otherProps: TextInputProps
   // Refer https://github.com/redux-form/redux-form/issues/4509#issuecomment-529830947
   normalizeInput: (value: any) => any
 }
 
 const Input = ({
-                 normalizeInput = (value: any) => value,
-                 ...props
-               }: InputProps) => {
-
+  normalizeInput = (value: any) => value,
+  ...props
+}: InputProps) => {
   const {input, meta, ...otherProps} = props
   const {error} = meta
 
@@ -32,7 +31,7 @@ const Input = ({
         value={value}
         testID={input.name}
         style={styles.input}
-        onChangeText={(params) => {
+        onChangeText={params => {
           const value = normalizeInput(params)
           input.onChange(value)
           setValue(value)
@@ -57,7 +56,7 @@ const ListSelector = (props: ListSelectorProps) => {
   const {input, items} = props
   const {onChange, value} = input
 
-  const [selected, setSelected] = useState({} as { [key: number]: string })
+  const [selected, setSelected] = useState({} as {[key: number]: string})
 
   useEffect(() => {
     setSelected(value)
@@ -70,7 +69,7 @@ const ListSelector = (props: ListSelectorProps) => {
         <TouchableOpacity
           style={[
             styles.myButton,
-            !!selected[item.id] && styles.buttonSelected
+            !!selected[item.id] && styles.buttonSelected,
           ]}
           key={index}
           onPress={() => {
@@ -98,7 +97,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   listParent: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   myButton: {
     padding: 5,
@@ -107,12 +106,12 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   buttonSelected: {
-    backgroundColor: '#CEE8CE'
+    backgroundColor: '#CEE8CE',
   },
   error: {
-    color: 'red'
-  }
+    color: 'red',
+  },
 })

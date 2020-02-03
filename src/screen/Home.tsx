@@ -1,5 +1,11 @@
 import React from 'react'
-import {FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity} from 'react-native'
+import {
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from 'react-native'
 import {useNavigation} from 'react-navigation-hooks'
 import {useDispatch, useSelector} from 'react-redux'
 import {removeTodo, State} from '../redux'
@@ -22,7 +28,7 @@ export default () => {
             <TodoCard
               onPressEdit={id => {
                 navigate('AddTodo', {
-                  ...todos.todo[id]
+                  ...todos.todo[id],
                 })
               }}
               onPressRemove={id => dispatch(removeTodo({id}))}
@@ -34,8 +40,7 @@ export default () => {
         />
         <TouchableOpacity
           style={styles.addButton}
-          onPress={() => navigate('AddTodo')}
-        >
+          onPress={() => navigate('AddTodo')}>
           <Text style={{color: 'grey'}}>+</Text>
         </TouchableOpacity>
       </SafeAreaView>
@@ -58,6 +63,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     borderRadius: 25,
     position: 'absolute',
-    bottom: 0
+    bottom: 0,
   },
 })
