@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     height: 20,
   },
   buttonSelected: {
-    backgroundColor: 'blue',
+    backgroundColor: '#90ee90',
   },
   round: {
     height: 40,

@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   save: {
-    backgroundColor: 'brown',
+    backgroundColor: '#90ee90',
     padding: 20,
     alignItems: 'center',
     borderRadius: 10,
